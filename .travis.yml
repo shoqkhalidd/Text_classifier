@@ -9,3 +9,6 @@ script:
 branches:
   only:
   - main
+  
+cache:
+  npm: false
