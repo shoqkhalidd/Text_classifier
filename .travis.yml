@@ -9,6 +9,8 @@ script:
 branches:
   only:
   - main
+  - new_features
+
   
 cache:
   npm: false
