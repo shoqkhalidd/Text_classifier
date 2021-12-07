@@ -1,4 +1,4 @@
-# Text_classifier
+# Text_classifier [![Build Status](https://app.travis-ci.com/shoqkhalidd/Text_classifier.svg?branch=main)](https://app.travis-ci.com/shoqkhalidd/Text_classifier)
 
 ## Description
 
