@@ -10,7 +10,7 @@ branches:
   only:
   - main
   - new_features_shouq
-  - new_features_noor 
+  - new_features_noor2  
   
 cache:
   npm: false
