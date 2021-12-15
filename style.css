@@ -95,7 +95,20 @@ label.txt{
   background-position: 100%;
   color: #FFBF18;
 }
+.res{
+  color: #d9656d;
+  font-family:'Times New Roman', Times, serif;
+  font-size: larger;
+  font-weight: 700;
+}
 
+.lables label{
+  margin: 1% 0;
+  display: block;
+  color: #8fa1ff;
+  font-family:'Times New Roman', Times, serif;
+  font-size: larger;
+}
 .img-bg{
   background-color: #4f49ec;
 }
