@@ -1,17 +1,63 @@
  <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>Your front-end</title>
+	<meta charset="UTF-8">
+	<!-- Make the page title like system name-->
+	<title>Text Classifier</title>
+	
+	
+	<!-- import bootstrap css file -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	
+	<!-- import my css file -->
+	<link rel="stylesheet" href="/css/styles.css">
+	
+	<!-- import jquery, bootstrap, and ajax javascript file -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.5.0.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	
+	
 </head>
 
-<body>
-<form action="/fasttext">
-	Enter your text to be classified<br>
-	<input type="text" name="statement">
-	<input type="submit" value="Submit">
-</form> 
-
+<body>	
+	<div class="container text-center">
+		<div class="d-flex justify-content-center">
+			<div>
+				<span class="pt-3 h2 font-weight-bold navyBlueText">Text Classifier</span>
+				<img src="/images/logo.jpg" width="80" hieght="80"  alt="logo"/>
+			</div>
+		</div>
+	   <div class="pt-3 mt-3">
+		  <!-- Create form to be able to submit the text to the server to Classify it -->
+		  <form id="textForm" action="/fasttext">
+		     <p class="h4 navyBlueText">Please enter your text to be classified</p>
+		     <!-- Create textarea to user be able to enter the text -->
+		     <textarea id="usertext" type="text" name="statement" placeholder="Write" ></textarea>
+		     <br/>
+		     <!-- Create Button to submit the form -->
+		     <input class="submit navyBlueBG" type="submit" value="Submit">
+		     <!-- Create Button to clear text from the above textarea -->
+		     <button class="cleartext redBG" onclick="document.getElementById('usertext').value ='' " type="button">Clear text</button>
+		  </form>
+	   </div>
+	   <div id="result">
+	   	  <!-- Table to show the results -->
+		  <table id="tableResult" class="table table-hover table-bordered">
+		     <thead>
+		        <tr>
+		           <th>#</th>
+		           <th colspan="2">Text</th>
+		           <th>Label</th>
+		        </tr>
+		     </thead>
+		     <tbody>
+		     </tbody>
+		  </table>
+	   </div>
+	</div>
+	
+	<script type="text/javascript" src="/js/scripts.js"></script>
 </body>
-<script src="index.js"></script>
+
 </html> 

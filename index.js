@@ -20,7 +20,9 @@ FastText.train("supervised", config, function (success, error) {
   
 })
 
-app.use(cors())
+//app.use(cors());
+app.use(express.static(__dirname));
+
 
 app.get('/', (req, res) => {
   res.sendfile("index.html");
@@ -28,29 +30,31 @@ app.get('/', (req, res) => {
 
 app.get('/fasttext/', function(req, res) {
   var statement = req.param('statement');
-    res.send(getFastTextResults(statement));
+    //res.send(getFastTextResults(statement));
+    if(statement!=""){
+    	FastText.predict("model.bin", 3, [statement],function (success, error) {
+			if(error) {
+				respons = {
+					"status" : "ERROR",
+					"message" : error
+				};
+			}else{
+				respons = {
+					"status" : "SUCCESS",
+					"result" : success,
+					"message" : "The transaction was completed successfully."
+				};
+			}
+			res.send(respons);
+		});
+  	}else{
+		respons = {
+			"status" : "ERROR",
+			"message" : "The text is empty."
+		};
+    	res.send(respons);
+    }    
 });
-
-function getFastTextResults(statement) {
-	//predict returns an array with the input and predictions for best cateogires
-	if(statement!=""){
-    FastText.predict(
-		"model.bin", 3,
-		[statement],
-		function (success, error) {
-
-		  if(error) {
-			console.log(error)
-			return;
-		  }
-		  console.log(success)
-		})
-  
-	  return "success!";}
-    else
-    return "fail"
-}
-
 
 app.listen(8000, () => {
   console.log('Listening on port 8000!')
