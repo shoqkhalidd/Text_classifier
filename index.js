@@ -7,7 +7,9 @@ let config = {
   dim: 100,
   input: "train.txt",
   output: "model"
+  
 }
+
 
 FastText.train("supervised", config, function (success, error) {
 
@@ -28,13 +30,14 @@ app.get('/', (req, res) => {
 
 app.get('/fasttext/', function(req, res) {
   var statement = req.param('statement');
-    res.send(getFastTextResults(statement));
+  res.send(getFastTextResults(statement));
+
 });
 
 function getFastTextResults(statement) {
 	//predict returns an array with the input and predictions for best cateogires
-	if(statement!=""){
-    FastText.predict(
+    let getFastTextResults = null;
+	FastText.predict(
 		"model.bin", 3,
 		[statement],
 		function (success, error) {
@@ -43,15 +46,13 @@ function getFastTextResults(statement) {
 			console.log(error)
 			return;
 		  }
-		  console.log(success)
+          getFastTextResults = success;
 		})
+	return getFastTextResults;
   
-	  return "success!";}
-    else
-    return "fail"
 }
-
 
 app.listen(8000, () => {
   console.log('Listening on port 8000!')
 });
+
