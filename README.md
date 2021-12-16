@@ -1,9 +1,13 @@
 # Text_classifier [![Build Status](https://app.travis-ci.com/shoqkhalidd/Text_classifier.svg?branch=main)](https://app.travis-ci.com/shoqkhalidd/Text_classifier)
 
-## UI
-### Main page
+## User Interface
+
+### Main Page
+
 <img src="UI.png">
+
 ### Text Classifier Example
+
 <img src="textClassifierExample.png">
 
 ## Description
