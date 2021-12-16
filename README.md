@@ -3,11 +3,9 @@
 ## User Interface
 
 ### Main Page
-
 <img src="UI.png">
 
 ### Text Classifier Example
-
 <img src="textClassifierExample.png">
 
 ## Description
