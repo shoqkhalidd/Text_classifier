@@ -1,5 +1,11 @@
 # Text_classifier [![Build Status](https://app.travis-ci.com/shoqkhalidd/Text_classifier.svg?branch=main)](https://app.travis-ci.com/shoqkhalidd/Text_classifier)
 
+## UI
+### Main page
+<img src="UI.png">
+### Text Classifier Example
+<img src="textClassifierExample.png">
+
 ## Description
 
 This project is an web text classfier system it works by using Node-FastText.
